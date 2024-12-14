@@ -1,4 +1,4 @@
-import { NgFor } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import type { MenuItem } from './menu.type';
@@ -6,11 +6,19 @@ import type { MenuItem } from './menu.type';
 @Component({
   selector: 'app-menu',
   standalone: true,
-  imports: [NzMenuModule, NgFor],
+  imports: [NzMenuModule, NgFor, NgIf],
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss'],
 })
 export class MenuComponent {
+  folders: { name: string; folders?: { name: string; folders?: any }[] }[] = [
+    { name: 'Movies', folders: [{ name: 'Action' }, { name: 'Comedy' }] },
+    { name: 'Music' },
+    { name: 'Pictures' },
+    { name: 'Documents' },
+    { name: 'Fun' },
+  ];
+
   menuData: MenuItem[] = [
     {
       title: 'Navigation One',
