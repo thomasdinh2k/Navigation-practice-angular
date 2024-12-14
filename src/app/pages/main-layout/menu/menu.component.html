@@ -1,37 +1,23 @@
 <ul nz-menu [nzMode]="'vertical'">
-    <li nz-submenu nzTitle="Navigation One" nzIcon="mail">
+    <li *ngFor="let menu of menuData" nz-submenu [nzTitle]="menu.title" [nzIcon]="menu.icon"
+        (nzOpenChange)="menu.onOpenChange ? menu.onOpenChange($event) : null">
         <ul>
-            <li nz-menu-group nzTitle="Item 1">
+            <!-- Menu Groups -->
+            <li *ngFor="let group of menu.groups" nz-menu-group [nzTitle]="group.title">
                 <ul>
-                    <li nz-menu-item>Option 1</li>
-                    <li nz-menu-item>Option 2</li>
+                    <li *ngFor="let item of group.items" nz-menu-item>{{ item }}</li>
                 </ul>
             </li>
-            <li nz-menu-group nzTitle="Item 2">
+
+            <!-- Submenus -->
+            <li *ngFor="let submenu of menu.submenus" nz-submenu [nzTitle]="submenu.title">
                 <ul>
-                    <li nz-menu-item>Option 3</li>
-                    <li nz-menu-item>Option 4</li>
+                    <li *ngFor="let item of submenu.items" nz-menu-item>{{ item }}</li>
                 </ul>
             </li>
-        </ul>
-    </li>
-    <li nz-submenu (nzOpenChange)="change($event)" nzTitle="Navigation Two" nzIcon="appstore">
-        <ul>
-            <li nz-menu-item>Option 5</li>
-            <li nz-menu-item>Option 6</li>
-            <li nz-submenu nzTitle="Submenu">
-                <ul>
-                    <li nz-menu-item>Option 7</li>
-                    <li nz-menu-item>Option 8</li>
-                </ul>
-            </li>
-        </ul>
-    </li>
-    <li nz-submenu nzTitle="Navigation Three" nzIcon="setting">
-        <ul>
-            <li nz-menu-item>Option 9</li>
-            <li nz-menu-item>Option 10</li>
-            <li nz-menu-item>Option 11</li>
+
+            <!-- Direct Items -->
+            <li *ngFor="let item of menu.items" nz-menu-item>{{ item }}</li>
         </ul>
     </li>
 </ul>
