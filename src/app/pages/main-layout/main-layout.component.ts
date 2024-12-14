@@ -10,6 +10,6 @@ import { NzMenuModule } from 'ng-zorro-antd/menu';
   standalone: true,
   imports: [NzBreadCrumbModule, NzIconModule, NzMenuModule, NzLayoutModule],
   templateUrl: './main-layout.component.html',
-  styleUrls: ['./main-layout.component.css']
+  styleUrls: ['./main-layout.component.scss'],
 })
 export class MainLayoutComponent {}
