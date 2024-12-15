@@ -15,8 +15,25 @@ export class MenuComponent {
     { name: 'Movies', folders: [{ name: 'Action' }, { name: 'Comedy' }] },
     { name: 'Music' },
     { name: 'Pictures' },
-    { name: 'Documents' },
-    { name: 'Fun' },
+    {
+      name: 'Documents',
+      folders: [
+        {
+          name: '1900s',
+          folders: [
+            {
+              name: 'Hello World',
+              folders: [
+                { name: 'hello world 1' },
+                { name: 'hello world 1' },
+                { name: 'hello world 1' },
+                { name: 'hello world 1' },
+              ],
+            },
+          ],
+        },
+      ],
+    },
   ];
 
   menuData: MenuItem[] = [

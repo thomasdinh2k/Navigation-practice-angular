@@ -1,19 +1,39 @@
 <ul nz-menu [nzMode]="'vertical'">
+    <!-- Home Menu -->
     <li nz-submenu nzTitle="Home" nzIcon="home">
-        <ul *ngFor="let folder of folders">
+        <!-- Loop through folders -->
+        <ul>
+            <ng-container *ngFor="let folder of folders">
+                <!-- Render Submenu if Subfolders Exist -->
+                <li *ngIf="folder?.folders" nz-submenu [nzTitle]="folder.name" [nzIcon]="'folder'">
+                    <ul>
+                        <ng-container *ngFor="let subfolder of folder.folders">
+                            <!-- Recursively Check Subfolders -->
+                            <ng-container *ngIf="subfolder?.folders; else menuItem">
+                                <li nz-submenu [nzTitle]="subfolder.name" [nzIcon]="'folder'">
+                                    <ul>
+                                        <li *ngFor="let subsubfolder of subfolder.folders" nz-menu-item>
+                                            {{ subsubfolder.name }}
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ng-container>
 
-            <!-- <li nz-menu-item>{{folder.name}}</li> -->
-            <li *ngIf="folder?.folders" nz-submenu [nzTitle]="folder.name">
+                            <!-- Render Simple Menu Item -->
+                            <ng-template #menuItem>
+                                <li nz-menu-item>
+                                    {{ subfolder.name }}
+                                </li>
+                            </ng-template>
+                        </ng-container>
+                    </ul>
+                </li>
 
-                <ul *ngFor="let subFolder of folder.folders">
-                    <li>{{subFolder.name}}</li>
-                </ul>
-
-            </li>
-
-            <!-- <li nz-menu-item>Movies</li>
-            <li nz-menu-item>Music</li>
-            <li nz-menu-item>Pictures</li> -->
+                <!-- Render Simple Menu Item if No Subfolders Exist -->
+                <li *ngIf="!folder?.folders" nz-menu-item>
+                    {{ folder.name }}
+                </li>
+            </ng-container>
         </ul>
     </li>
 </ul>
