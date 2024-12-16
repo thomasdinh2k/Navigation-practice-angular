@@ -1,12 +1,13 @@
-import { NgFor, NgIf } from '@angular/common';
+import { NgFor } from '@angular/common';
 import { Component } from '@angular/core';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
+import { FolderComponent } from './folder/folder.component';
 import type { Folder } from './menu.type';
 
 @Component({
   selector: 'app-menu',
   standalone: true,
-  imports: [NzMenuModule, NgFor, NgIf],
+  imports: [NzMenuModule, NgFor, FolderComponent],
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss'],
 })
