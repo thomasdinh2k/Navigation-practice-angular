@@ -1,11 +1,5 @@
-<ul nz-menu [nzMode]="'vertical'">
-    <!-- Home Menu -->
-    <li nz-submenu nzTitle="Home" nzIcon="home">
-        <!-- Loop through folders -->
-        <ul>
-            <ng-container *ngFor="let folder of folders">
-                <app-folder [folder]="folder"></app-folder>
-            </ng-container>
-        </ul>
-    </li>
+<ul nz-menu [nzMode]="'vertical'" *ngFor="let folder of navFolders">
+
+    <app-folder [folder]="folder"></app-folder>
+
 </ul>
