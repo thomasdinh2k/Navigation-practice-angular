@@ -196,5 +196,10 @@ export class MenuService {
     return this.MenuFolder;
   }
 
+  getAllMenu(): string[] {
+    let menu = this.MenuFolder?.map((item) => item.name);
+    return menu;
+  }
+
   constructor() {}
 }

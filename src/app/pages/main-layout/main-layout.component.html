@@ -2,9 +2,11 @@
   <nz-header>
     <div class="logo"></div>
     <ul nz-menu nzTheme="dark" nzMode="horizontal" class="header-menu">
-      <li nz-menu-item nzSelected>nav 1</li>
-      <li nz-menu-item>nav 2</li>
-      <li nz-menu-item>nav 3</li>
+      <!-- <li nz-menu-item nzSelected>Create Navigation</li> -->
+      @for (item of navFolders; track $index) {
+      <li nz-menu-item>{{item}}</li>
+      }
+
     </ul>
   </nz-header>
   <nz-layout>
