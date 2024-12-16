@@ -1,7 +1,7 @@
 import { NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
-import type { MenuItem } from './menu.type';
+import type { Folder } from './menu.type';
 
 @Component({
   selector: 'app-menu',
@@ -11,7 +11,7 @@ import type { MenuItem } from './menu.type';
   styleUrls: ['./menu.component.scss'],
 })
 export class MenuComponent {
-  folders: { name: string; folders?: { name: string; folders?: any }[] }[] = [
+  folders: Folder[] = [
     { name: 'Movies', folders: [{ name: 'Action' }, { name: 'Comedy' }] },
     { name: 'Music' },
     { name: 'Pictures' },
@@ -36,7 +36,7 @@ export class MenuComponent {
     },
   ];
 
-  menuData: MenuItem[] = [
+  menuData: any[] = [
     {
       title: 'Navigation One',
       icon: 'mail',
