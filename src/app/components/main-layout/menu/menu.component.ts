@@ -9,7 +9,12 @@ import type { Folder } from './menu.type';
   selector: 'app-menu',
   standalone: true,
   imports: [NzMenuModule, NgFor, FolderComponent, CommonModule],
-  templateUrl: './menu.component.html',
+  // templateUrl: './menu.component.html',
+  template: `
+    <ul nz-menu [nzMode]="'vertical'" *ngFor="let folder of navFolders">
+      <app-folder [folder]="folder"></app-folder>
+    </ul>
+  `,
   styleUrls: ['./menu.component.scss'],
 })
 export class MenuComponent {

@@ -1,11 +1,12 @@
 import { NgFor, NgIf } from '@angular/common';
 import { Component, Input } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { Folder } from '../menu.type';
 
 @Component({
   selector: 'app-folder',
-  imports: [NzMenuModule, NgFor, NgIf],
+  imports: [NzMenuModule, NgFor, NgIf, RouterLink],
   standalone: true,
   template: `
     <!-- Render Submenu if Subfolders Exist -->
@@ -14,6 +15,7 @@ import { Folder } from '../menu.type';
       nz-submenu
       [nzTitle]="folder.name"
       [nzIcon]="'folder'"
+      [routerLink]="folder.folders ? [ParentPath, folder.name] : [folder.name]"
     >
       <ul>
         <ng-container *ngFor="let subfolder of folder.folders">
@@ -29,12 +31,21 @@ import { Folder } from '../menu.type';
             <!--  -->
             <!--  -->
             <!-- The code above is the exact content of the <Folder/>, which is a recursive component -->
-            <app-folder [folder]="subfolder"></app-folder>
+            <app-folder
+              [folder]="subfolder"
+              [ParentPath]="accumulatePath(ParentPath, folder.name)"
+            ></app-folder>
           </ng-container>
 
           <!-- Render Simple Menu Item -->
           <ng-template #menuItem>
-            <li nz-menu-item>
+            <li
+              nz-menu-item
+              [routerLink]="[
+                accumulatePath(ParentPath, folder.name),
+                subfolder.name
+              ]"
+            >
               {{ subfolder.name }}
             </li>
           </ng-template>
@@ -43,7 +54,11 @@ import { Folder } from '../menu.type';
     </li>
 
     <!-- Render Simple Menu Item if No Subfolders Exist -->
-    <li *ngIf="!folder?.folders" nz-menu-item>
+    <li
+      *ngIf="!folder?.folders"
+      nz-menu-item
+      [routerLink]="[accumulatePath(ParentPath, folder.name)]"
+    >
       {{ folder.name }}
     </li>
   `,
@@ -51,4 +66,9 @@ import { Folder } from '../menu.type';
 })
 export class FolderComponent {
   @Input() folder!: Folder;
+  @Input() ParentPath: string = '';
+
+  accumulatePath(parentPath: string, currentPath: string): string {
+    return parentPath ? `${parentPath}/${currentPath}` : currentPath;
+  }
 }

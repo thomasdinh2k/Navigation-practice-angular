@@ -15,4 +15,8 @@ export const routes: Routes = [
     path: 'test',
     component: PageContentComponent,
   },
+  {
+    path: '**',
+    component: PageContentComponent,
+  },
 ];
