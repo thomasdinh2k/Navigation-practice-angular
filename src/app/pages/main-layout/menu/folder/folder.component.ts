@@ -19,13 +19,17 @@ import { Folder } from '../menu.type';
         <ng-container *ngFor="let subfolder of folder.folders">
           <!-- Recursively Check Subfolders -->
           <ng-container *ngIf="subfolder?.folders; else menuItem">
-            <li nz-submenu [nzTitle]="subfolder.name" [nzIcon]="'folder'">
+            <!-- <li nz-submenu [nzTitle]="subfolder.name" [nzIcon]="'folder'">
               <ul>
                 <li *ngFor="let subsubfolder of subfolder.folders" nz-menu-item>
                   {{ subsubfolder.name }}
                 </li>
               </ul>
-            </li>
+            </li> -->
+            <!--  -->
+            <!--  -->
+            <!-- The code above is the exact content of the <Folder/>, which is a recursive component -->
+            <app-folder [folder]="subfolder"></app-folder>
           </ng-container>
 
           <!-- Render Simple Menu Item -->
