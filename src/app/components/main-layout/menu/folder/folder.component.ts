@@ -37,7 +37,7 @@ import { Folder } from '../menu.type';
             ></app-folder>
           </ng-container>
 
-          <!-- Render Simple Menu Item -->
+          <!-- Render Simple Menu Item Because SubFolder Does't Have More SubFolders -->
           <ng-template #menuItem>
             <li
               nz-menu-item
