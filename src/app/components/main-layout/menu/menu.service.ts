@@ -27,7 +27,85 @@ export class MenuService {
                     { name: 'Đánh giá hiện trạng' },
                     {
                       name: 'Đánh giá chi tiết',
-                      folders: [{ name: 'Tài liệu đính kèm' }],
+                      folders: [
+                        {
+                          name: 'Tan',
+                          folders: [
+                            {
+                              name: 'Tan 1',
+                              folders: [
+                                {
+                                  name: 'Tan 1.1',
+                                  folders: [
+                                    {
+                                      name: 'Tan 1.1.1',
+                                      folders: [
+                                        {
+                                          name: 'Tan 1.1.1.1',
+                                          folders: [
+                                            {
+                                              name: 'Tan 1.1.1.1.1',
+                                              folders: [
+                                                {
+                                                  name: 'Tan 1.1.1.1.1.1',
+                                                  folders: [
+                                                    {
+                                                      name: 'Tan 1.1.1.1.1.1.1',
+                                                      folders: [
+                                                        {
+                                                          name: 'Tan 1.1.1.1.1.1.1.1',
+                                                          folders: [
+                                                            {
+                                                              name: 'Tan 1.1.1.1.1.1.1.1.1',
+                                                              folders: [
+                                                                {
+                                                                  name: 'Tan 1.1.1.1.1.1.1.1.1.1',
+                                                                  folders: [
+                                                                    {
+                                                                      name: 'Tan 1.1.1.1.1.1.1.1.1.1.1',
+                                                                      folders: [
+                                                                        {
+                                                                          name: 'Tan 1.1.1.1.1.1.1.1.1.1.1.1',
+                                                                          folders:
+                                                                            [
+                                                                              {
+                                                                                name: 'Tan 1.1.1.1.1.1.1.1.1.1.1.1.1',
+                                                                                folders:
+                                                                                  [
+                                                                                    {
+                                                                                      name: 'Tan 1.1.1.1.1.1.1.1.1.1.1.1.1.1',
+                                                                                      folders:
+                                                                                        [],
+                                                                                    },
+                                                                                  ],
+                                                                              },
+                                                                            ],
+                                                                        },
+                                                                      ],
+                                                                    },
+                                                                  ],
+                                                                },
+                                                              ],
+                                                            },
+                                                          ],
+                                                        },
+                                                      ],
+                                                    },
+                                                  ],
+                                                },
+                                              ],
+                                            },
+                                          ],
+                                        },
+                                      ],
+                                    },
+                                  ],
+                                },
+                              ],
+                            },
+                          ],
+                        },
+                      ],
                     },
                   ],
                 },
