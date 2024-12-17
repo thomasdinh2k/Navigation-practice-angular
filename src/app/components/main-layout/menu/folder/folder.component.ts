@@ -15,7 +15,7 @@ import { Folder } from '../menu.type';
       nz-submenu
       [nzTitle]="folder.name"
       [nzIcon]="'folder'"
-      [routerLink]="folder.folders ? [ParentPath, folder.name] : [folder.name]"
+      [routerLink]="folder.name"
     >
       <ul>
         <ng-container *ngFor="let subfolder of folder.folders">
@@ -39,13 +39,7 @@ import { Folder } from '../menu.type';
 
           <!-- Render Simple Menu Item Because SubFolder Does't Have More SubFolders -->
           <ng-template #menuItem>
-            <li
-              nz-menu-item
-              [routerLink]="[
-                accumulatePath(ParentPath, folder.name),
-                subfolder.name
-              ]"
-            >
+            <li nz-menu-item [routerLink]="subfolder.name">
               {{ subfolder.name }}
             </li>
           </ng-template>
@@ -54,11 +48,7 @@ import { Folder } from '../menu.type';
     </li>
 
     <!-- Render Simple Menu Item if No Subfolders Exist -->
-    <li
-      *ngIf="!folder?.folders"
-      nz-menu-item
-      [routerLink]="[accumulatePath(ParentPath, folder.name)]"
-    >
+    <li *ngIf="!folder?.folders" nz-menu-item [routerLink]="folder.name">
       {{ folder.name }}
     </li>
   `,
