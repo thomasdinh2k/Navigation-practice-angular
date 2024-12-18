@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ServicePracticeComponent } from './service-practice/service-practice.component';
 import { TreeViewComponent } from './tree-view/tree-view.component';
 
 @Component({
   selector: 'app-page-content',
-  imports: [TreeViewComponent],
+  imports: [TreeViewComponent, ServicePracticeComponent],
   template: `
     <p>page-content works!</p>
 
@@ -12,6 +13,9 @@ import { TreeViewComponent } from './tree-view/tree-view.component';
 
     <h1>TreeView:</h1>
     <app-tree-view />
+
+    <h1>Service Practice</h1>
+    <app-service-practice />
   `,
   styles: `
     h3 {

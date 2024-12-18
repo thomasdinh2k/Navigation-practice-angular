@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PageContentComponent } from './page-content.component';
+import { ServicePracticeComponent } from './service-practice.component';
 
-describe('PageContentComponent', () => {
-  let component: PageContentComponent;
-  let fixture: ComponentFixture<PageContentComponent>;
+describe('ServicePracticeComponent', () => {
+  let component: ServicePracticeComponent;
+  let fixture: ComponentFixture<ServicePracticeComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PageContentComponent]
+      imports: [ServicePracticeComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PageContentComponent);
+    fixture = TestBed.createComponent(ServicePracticeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

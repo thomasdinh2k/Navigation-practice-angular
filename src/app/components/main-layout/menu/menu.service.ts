@@ -274,5 +274,9 @@ export class MenuService {
     return this.MenuFolder;
   }
 
+  removeAllNavs(): Folder[] {
+    return (this.MenuFolder = []);
+  }
+
   constructor() {}
 }
