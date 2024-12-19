@@ -27,7 +27,85 @@ export class MenuService {
                     { name: 'Đánh giá hiện trạng' },
                     {
                       name: 'Đánh giá chi tiết',
-                      folders: [{ name: 'Tài liệu đính kèm' }],
+                      folders: [
+                        {
+                          name: 'Tan',
+                          folders: [
+                            {
+                              name: 'Tan 1',
+                              folders: [
+                                {
+                                  name: 'Tan 1.1',
+                                  folders: [
+                                    {
+                                      name: 'Tan 1.1.1',
+                                      folders: [
+                                        {
+                                          name: 'Tan 1.1.1.1',
+                                          folders: [
+                                            {
+                                              name: 'Tan 1.1.1.1.1',
+                                              folders: [
+                                                {
+                                                  name: 'Tan 1.1.1.1.1.1',
+                                                  folders: [
+                                                    {
+                                                      name: 'Tan 1.1.1.1.1.1.1',
+                                                      folders: [
+                                                        {
+                                                          name: 'Tan 1.1.1.1.1.1.1.1',
+                                                          folders: [
+                                                            {
+                                                              name: 'Tan 1.1.1.1.1.1.1.1.1',
+                                                              folders: [
+                                                                {
+                                                                  name: 'Tan 1.1.1.1.1.1.1.1.1.1',
+                                                                  folders: [
+                                                                    {
+                                                                      name: 'Tan 1.1.1.1.1.1.1.1.1.1.1',
+                                                                      folders: [
+                                                                        {
+                                                                          name: 'Tan 1.1.1.1.1.1.1.1.1.1.1.1',
+                                                                          folders:
+                                                                            [
+                                                                              {
+                                                                                name: 'Tan 1.1.1.1.1.1.1.1.1.1.1.1.1',
+                                                                                folders:
+                                                                                  [
+                                                                                    {
+                                                                                      name: 'Tan 1.1.1.1.1.1.1.1.1.1.1.1.1.1',
+                                                                                      folders:
+                                                                                        [],
+                                                                                    },
+                                                                                  ],
+                                                                              },
+                                                                            ],
+                                                                        },
+                                                                      ],
+                                                                    },
+                                                                  ],
+                                                                },
+                                                              ],
+                                                            },
+                                                          ],
+                                                        },
+                                                      ],
+                                                    },
+                                                  ],
+                                                },
+                                              ],
+                                            },
+                                          ],
+                                        },
+                                      ],
+                                    },
+                                  ],
+                                },
+                              ],
+                            },
+                          ],
+                        },
+                      ],
                     },
                   ],
                 },
@@ -196,9 +274,8 @@ export class MenuService {
     return this.MenuFolder;
   }
 
-  getAllMenu(): string[] {
-    let menu = this.MenuFolder?.map((item) => item.name);
-    return menu;
+  removeAllNavs(): Folder[] {
+    return (this.MenuFolder = []);
   }
 
   constructor() {}

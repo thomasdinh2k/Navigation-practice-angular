@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 
-import { CommonModule } from '@angular/common';
+import { RouterOutlet } from '@angular/router';
 import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
@@ -17,7 +17,7 @@ import { MenuService } from './menu/menu.service';
     NzMenuModule,
     NzLayoutModule,
     MenuComponent,
-    CommonModule,
+    RouterOutlet,
   ],
   templateUrl: './main-layout.component.html',
   styleUrls: ['./main-layout.component.scss'],
@@ -28,6 +28,6 @@ export class MainLayoutComponent {
   menuService: MenuService = inject(MenuService);
 
   constructor() {
-    this.navFolders = this.menuService.getAllMenu();
+    // this.navFolders = this.menuService.getAllMenu();
   }
 }
