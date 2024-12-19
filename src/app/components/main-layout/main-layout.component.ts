@@ -23,11 +23,8 @@ import { MenuService } from './menu/menu.service';
   styleUrls: ['./main-layout.component.scss'],
 })
 export class MainLayoutComponent {
-  navFolders: string[] = [];
-
   menuService: MenuService = inject(MenuService);
 
-  constructor() {
-    // this.navFolders = this.menuService.getAllMenu();
-  }
+  navFolders = this.menuService.MenuFolder.map((item) => item.name);
+  constructor() {}
 }
