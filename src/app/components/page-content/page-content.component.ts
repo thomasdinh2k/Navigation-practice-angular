@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ObservablePracticeComponent } from './observable-practice/observable-practice.component';
+import { ObsPracticeComponent } from "./obs-practice/obs-practice.component";
 import { ServicePracticeComponent } from './service-practice/service-practice.component';
 import { TodoComponent } from './todo/todo.component';
 import { TreeViewComponent } from './tree-view/tree-view.component';
@@ -12,7 +12,8 @@ import { TreeViewComponent } from './tree-view/tree-view.component';
     TreeViewComponent,
     ServicePracticeComponent,
     TodoComponent,
-  ],
+    ObsPracticeComponent
+],
   template: `
     <div class="wrapper">
       <app-todo />
@@ -26,6 +27,7 @@ import { TreeViewComponent } from './tree-view/tree-view.component';
       <app-service-practice />
 
       <h1>Observable Practice</h1>
+      <app-obs-practice/>
     </div>
   `,
   styles: `
