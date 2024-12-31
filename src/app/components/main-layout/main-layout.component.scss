@@ -1,5 +1,5 @@
 .ant-layout {
-  height: 100vh;
+  height: calc(100vh - 64px);
 }
 
 .logo {
@@ -31,4 +31,5 @@ nz-content {
   background: #fff;
   padding: 24px;
   min-height: 280px;
+  overflow: auto
 }

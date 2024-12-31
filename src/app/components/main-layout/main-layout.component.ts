@@ -5,6 +5,7 @@ import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
+import { PageContentComponent } from "../page-content/page-content.component";
 import { MenuComponent } from './menu/menu.component';
 import { MenuService } from './menu/menu.service';
 
@@ -17,8 +18,8 @@ import { MenuService } from './menu/menu.service';
     NzMenuModule,
     NzLayoutModule,
     MenuComponent,
-    RouterOutlet,
-  ],
+    PageContentComponent
+],
   templateUrl: './main-layout.component.html',
   styleUrls: ['./main-layout.component.scss'],
 })
