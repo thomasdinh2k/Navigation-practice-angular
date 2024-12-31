@@ -11,13 +11,15 @@ import { Folder } from './menu.type';
   imports: [NzMenuModule, NgFor, FolderComponent, CommonModule],
   // templateUrl: './menu.component.html',
   template: `
-    <ul
-      nz-menu
-      [nzMode]="'vertical'"
-      *ngFor="let folder of dogBreedData"
-    >
-      <app-folder [folder]="folder"></app-folder>
-    </ul>
+    <div class="app-menu">
+      <ul
+        nz-menu
+        [nzMode]="'vertical'"
+        *ngFor="let folder of dogBreedData"
+      >
+        <app-folder [folder]="folder"></app-folder>
+      </ul>
+    </div>
   `,
   styleUrls: ['./menu.component.scss'],
 })
