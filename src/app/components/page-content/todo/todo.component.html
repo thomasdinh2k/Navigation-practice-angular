@@ -1,0 +1,33 @@
+<div class="todo">
+    <h1>Task Tracker</h1>
+
+    <div class="task-input">
+        <input type="text" id="taskInput" placeholder="Add a new task">
+        <button onclick="addTask()">Add</button>
+    </div>
+
+    <ul id="taskList">
+        <!-- No tasks -->
+        <li>No tasks added yet. Start by adding a task!</li>
+
+        <!-- Tasks (Pending) -->
+        <li>
+            <input type="checkbox"> Task 1 - Pending
+            <button>Delete</button>
+        </li>
+        <li>
+            <input type="checkbox"> Task 2 - Pending
+            <button>Delete</button>
+        </li>
+
+        <!-- Tasks (Completed) -->
+        <li class="completed">
+            <input type="checkbox" checked> Task 3 - Completed
+            <button>Delete</button>
+        </li>
+        <li class="completed">
+            <input type="checkbox" checked> Task 4 - Completed
+            <button>Delete</button>
+        </li>
+    </ul>
+</div>
