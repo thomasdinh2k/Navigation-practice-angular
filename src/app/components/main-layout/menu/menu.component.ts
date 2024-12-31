@@ -1,8 +1,9 @@
 import { CommonModule, NgFor } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { FolderComponent } from './folder/folder.component';
 import { MenuService } from './menu.service';
+import { Folder } from './menu.type';
 
 @Component({
   selector: 'app-menu',
@@ -13,7 +14,7 @@ import { MenuService } from './menu.service';
     <ul
       nz-menu
       [nzMode]="'vertical'"
-      *ngFor="let folder of menuService.MenuFolder"
+      *ngFor="let folder of dogBreedData"
     >
       <app-folder [folder]="folder"></app-folder>
     </ul>
@@ -21,6 +22,8 @@ import { MenuService } from './menu.service';
   styleUrls: ['./menu.component.scss'],
 })
 export class MenuComponent {
+  @Input({required: true}) dogBreedData: Folder[] | null = null;
+  
   menuService: MenuService = inject(MenuService);
 
   constructor() {}
