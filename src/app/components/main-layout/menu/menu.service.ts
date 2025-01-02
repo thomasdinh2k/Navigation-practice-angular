@@ -5,7 +5,7 @@ import { Folder } from './menu.type';
   providedIn: 'root',
 })
 export class MenuService {
-  MenuFolder: Folder[] = [
+  MenuFolder: any[] = [
     {
       name: 'Báo cáo tổng hợp',
       folders: [

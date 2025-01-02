@@ -11,7 +11,7 @@ import { Folder } from '../menu.type';
   template: `
     <!-- Render Submenu if Subfolders Exist -->
     <li
-      *ngIf="folder?.folders"
+      *ngIf="folder.folders && folder.folders.length > 1"
       nz-submenu
       [nzTitle]="folder.name"
       [nzIcon]="'folder'"
@@ -48,7 +48,7 @@ import { Folder } from '../menu.type';
     </li>
 
     <!-- Render Simple Menu Item if No Subfolders Exist -->
-    <li *ngIf="!folder?.folders" nz-menu-item [routerLink]="folder.name">
+    <li *ngIf="folder.folders.length < 1" nz-menu-item [routerLink]="folder.name">
       {{ folder.name }}
     </li>
   `,

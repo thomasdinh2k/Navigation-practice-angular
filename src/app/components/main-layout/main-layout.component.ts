@@ -39,10 +39,11 @@ export class MainLayoutComponent {
       let breedData: Folder = {
         name: data[0],
         folders: Array.isArray(data[1])
-          ? data[1].map((item) => ({
+          ? data[1].map((item: string) => ({
               name: item,
+              folders: []
             }))
-          : undefined,
+          : [],
       };
       return breedData;
     };

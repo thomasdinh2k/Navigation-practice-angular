@@ -1,4 +1,4 @@
 export interface Folder {
   name: string;
-  folders?: Folder[];
+  folders: Folder[];
 }
